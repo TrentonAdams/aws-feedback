@@ -18,9 +18,12 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 I haven't learned the proper way of passing variables/parameters to the stacks
 yet, so I'm currently using env vars. I also have not added support for
 importing an existing VPC or load balancer.
+  
+Once you've set up your environment for the CDK, this should just work.
 
 ```bash
 # domain_name is the route53 zone portion of the domain name, not including host.
+cdk bootstrap aws://account-id/us-west-2
 time stack_name=slow-cf-test domain_name=example.com cdk deploy vpc ecs
 curl http://wiki.exmaple.com
 ```
