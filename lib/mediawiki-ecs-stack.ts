@@ -50,6 +50,8 @@ export class MediawikiEcsStack extends cdk.Stack
         const capacityProvider = new ecs.AsgCapacityProvider(this,
             'AsgCapacityProvider', {
                 autoScalingGroup: this.autoScalingGroup,
+                enableManagedTerminationProtection: false,
+                enableManagedScaling: true
             });
         this.cluster.addAsgCapacityProvider(capacityProvider);
 
